@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,7 +35,6 @@ class MainActivity : ComponentActivity() {
             HabitTrackerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Alken",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -46,7 +44,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier) {
     var showDialog by remember { mutableStateOf(false) }
 
     Box(
@@ -54,7 +52,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(text = "Hello $name!")
+            Text(text = "Gobbledygook")
             Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = { showDialog = true },
@@ -82,6 +80,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     HabitTrackerTheme {
-        Greeting("Alken")
+        Greeting()
     }
 }
